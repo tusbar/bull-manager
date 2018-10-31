@@ -70,7 +70,7 @@ await enqueue('my-cool-job', {
 
 ### `jobIdKey`
 
-Pass `jobIdKey` to job options so that `enqueue` will set the `jobId` to `_.get(data, jobIdKey)`.
+Pass `jobIdKey` to job options so that `enqueue` will set the `jobId` to `_.get(data, jobIdKey)`. Only works for `createJobQueue` and `joinJobQueue` job options, as it doesn’t make sense for `enqueue`. You always have the possibility to use `jobId` in `enqueue`, it will override anything else.
 
 ### Fallthrough error handlers
 
