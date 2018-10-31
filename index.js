@@ -67,13 +67,22 @@ async function createJobQueue(name, handler, options, jobOptions) {
 
   options = {
     concurrency: 1,
-    onError: globalOptions.onError,
     options
   }
 
   queue.process(options.concurrency, handler)
 
-  if (options.onError) {
+  if (globalOptions.onError && options.onError) {
+    queue.on('failed', async (job, error) => {
+      try {
+        await options.onError(job, error)
+      } catch (error2) {
+        return globalOptions.onError(job, error2)
+      }
+    })
+  } else if (globalOptions.onError) {
+    queue.on('failed', globalOptions.onError)
+  } else if (options.onError) {
     queue.on('failed', options.onError)
   }
 

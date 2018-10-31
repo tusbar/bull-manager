@@ -72,6 +72,10 @@ await enqueue('my-cool-job', {
 
 Pass `jobIdKey` to job options so that `enqueue` will set the `jobId` to `_.get(data, jobIdKey)`.
 
+### Fallthrough error handlers
+
+Throwing in a job specific error handler will call the global error handler with that error.
+
 ## Random things
 
 - You don’t need to pass job options to `createJobQueue` if you are never going to use `enqueue` in your workers.
