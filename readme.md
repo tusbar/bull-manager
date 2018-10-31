@@ -79,6 +79,7 @@ Throwing in a job specific error handler will call the global error handler with
 ## Random things
 
 - You don’t need to pass job options to `createJobQueue` if you are never going to use `enqueue` in your workers.
+- `removeOnComplete` is set to true by default.
 
 ## License
 
