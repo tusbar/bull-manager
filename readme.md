@@ -4,7 +4,6 @@
 
 [![npm version](https://badgen.net/npm/v/@tusbar/bull-manager)](https://www.npmjs.com/package/bull-manager)
 [![dependencies Status](https://badgen.net/david/dep/tusbar/bull-manager)](https://david-dm.org/tusbar/bull-manager)
-[![codecov](https://badgen.net/codecov/c/github/tusbar/bull-manager)](https://codecov.io/gh/tusbar/bull-manager)
 [![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
 
 ## Getting started
