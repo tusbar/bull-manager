@@ -67,7 +67,7 @@ async function createJobQueue(name, handler, options, jobOptions) {
 
   options = {
     concurrency: 1,
-    options
+    ...options
   }
 
   queue.process(options.concurrency, handler)
