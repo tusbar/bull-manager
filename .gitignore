@@ -1,0 +1,7 @@
+# Logs
+*.log
+npm-debug.log*
+CHANGELOG.md
+
+# Node
+node_modules

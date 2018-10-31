@@ -1,0 +1,34 @@
+{
+  "name": "bull-manager",
+  "public": true,
+  "version": "1.0.0",
+  "description": "Easily manage your bull queues",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc ava"
+  },
+  "keywords": [
+    "bull",
+    "queue"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "repository": "https://github.com/tusbar/bull-manager",
+  "author": "Bertrand Marron <bertrand.marron@gmail.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "bull": "^3.4.8"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "bull": "^3.4.8",
+    "xo": "^0.23.0"
+  },
+  "xo": {
+    "semicolon": false,
+    "space": 2
+  }
+}
