@@ -118,7 +118,7 @@ function enqueue(name, data, options) {
 
 async function disconnectQueues() {
   await Promise.all(
-    queues.map(({queue}) => queue.disconnect())
+    Object.values(queues).map(({queue}) => queue.disconnect())
   )
 
   queues = {}
