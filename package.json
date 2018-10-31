@@ -4,9 +4,6 @@
   "version": "0.0.0",
   "description": "Easily manage your bull queues",
   "main": "index.js",
-  "scripts": {
-    "test": "nyc ava"
-  },
   "keywords": [
     "bull",
     "queue"
