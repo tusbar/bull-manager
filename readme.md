@@ -2,7 +2,7 @@
 
 > Easily manage your bull queues
 
-[![npm version](https://badgen.net/npm/v/@tusbar/bull-manager)](https://www.npmjs.com/package/bull-manager)
+[![npm version](https://badgen.net/npm/v/bull-manager)](https://www.npmjs.com/package/bull-manager)
 [![dependencies Status](https://badgen.net/david/dep/tusbar/bull-manager)](https://david-dm.org/tusbar/bull-manager)
 [![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
 
