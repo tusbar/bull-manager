@@ -131,7 +131,7 @@ function enqueue(name, jobTitle, data, options) {
 
 async function disconnectQueues() {
   await Promise.all(
-    Object.values(queues).map(({queue}) => queue.close())
+    Object.values(queues).map(({queue}) => queue.disconnect())
   )
 
   queues = {}

@@ -105,7 +105,7 @@ Add a job to the `name` jobQueue.
 
 ### `disconnectQueues()`
 
-Run `Queue#close` on all queues.
+Run `Queue#disconnect` on all queues.
 
 ## Cool features
 
