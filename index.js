@@ -97,9 +97,15 @@ async function joinJobQueue(name, jobOptions) {
   return queue
 }
 
-function enqueue(name, data, options) {
+function enqueue(name, jobName, data, options) {
   if (!(name in queues)) {
     throw new Error(`Job queue "${name}" does not exist`)
+  }
+
+  if (typeof jobName !== 'string') {
+    data = jobName
+    options = data
+    name = undefined
   }
 
   const {
@@ -113,12 +119,12 @@ function enqueue(name, data, options) {
     ...options
   }
 
-  return queue.add(data, options)
+  return queue.add(jobName, data, options)
 }
 
 async function disconnectQueues() {
   await Promise.all(
-    Object.values(queues).map(({queue}) => queue.disconnect())
+    Object.values(queues).map(({queue}) => queue.close())
   )
 
   queues = {}

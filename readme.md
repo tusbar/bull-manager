@@ -59,12 +59,53 @@ await joinJobQueue('my-cool-job', {
   /* job options */
 })
 
-await enqueue('my-cool-job', {
+await enqueue('my-cool-job', 'job-name', {
   something: 'important'
 }, {
   /* job options */
 })
 ```
+
+## API
+
+### `configureQueues(options)`
+
+Configure `bull-manager` by specifying the following `options`:
+
+- `isManager`: set to `true` for workers. Defaults to `false`.
+- `createRedis`: function that creates redis connections if you need custom options. Passing a function will enable connections reuse for `subscriber` and `client` connections. Defaults to `undefined`.
+- `onError`: error handler that will be called for failed jobs when the corresponding queue doesn’t specify a custom error handler. Defaults to `undefined`.
+
+### `createJobQueue(name, handler, options, jobOptions)`
+
+Create a job queue and add the corresponding handler.
+
+It takes the following `options`:
+
+- `onError`: specific error handler that will be called when a job fails. Throwing withing the `onError` handler will invoke the global error handler (when defined) with the thrown error. Defaults to `undefined`.
+- `concurrency`: amount of concurrent jobs per process. Defaults to `1`.
+
+For `jobOptions`, refer to the [bull documentation](https://github.com/OptimalBits/bull/blob/master/REFERENCE.md#queueadd).
+
+There is one additional job option:
+
+- `jobIdKey`: `enqueue` will set the `jobId` to `_.get(data, jobIdKey)`
+
+The default values are the same as in `Queue#add` except for `removeOnComplete` that will be `true`.
+
+### `joinJobQueue(name, jobOptions)`
+
+Join a job queue. Behaves like `createJobQueue` except that it does not register a handler.
+
+### `enqueue(name, jobName, data, jobOptions)`
+
+Add a job to the `name` jobQueue.
+
+Just like in bull’s `queue.add`, `jobName` is optional.
+
+### `disconnectQueues()`
+
+Run `Queue#close` on all queues.
 
 ## Cool features
 
