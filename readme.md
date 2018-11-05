@@ -101,7 +101,7 @@ Join a job queue. Behaves like `createJobQueue` except that it does not register
 
 Add a job to the `name` jobQueue.
 
-`jobTitle` is just a simple name to identify a job, it is not required.
+`jobTitle` is just a simple name to identify a job, it is not required. It will set `name` property to `data` if not set.
 
 ### `disconnectQueues()`
 

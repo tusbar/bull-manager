@@ -116,8 +116,14 @@ function enqueue(name, jobTitle, data, options) {
   options = {
     ...jobOptions,
     jobId: jobIdKey ? _.get(data, jobIdKey) : undefined,
-    jobTitle,
     ...options
+  }
+
+  if (jobTitle) {
+    data = {
+      name: jobTitle,
+      ...data
+    }
   }
 
   return queue.add(data, options)
