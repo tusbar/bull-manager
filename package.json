@@ -1,7 +1,7 @@
 {
   "name": "bull-manager",
   "public": true,
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Easily manage your bull queues",
   "main": "index.js",
   "keywords": [
