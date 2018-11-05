@@ -97,11 +97,11 @@ The default values are the same as in `Queue#add` except for `removeOnComplete` 
 
 Join a job queue. Behaves like `createJobQueue` except that it does not register a handler.
 
-### `enqueue(name, jobName, data, jobOptions)`
+### `enqueue(name, jobTitle, data, jobOptions)`
 
 Add a job to the `name` jobQueue.
 
-Just like in bull’s `Queue#add`, `jobName` is optional.
+`jobTitle` is just a simple name to identify a job, it is not required.
 
 ### `disconnectQueues()`
 

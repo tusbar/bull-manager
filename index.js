@@ -97,15 +97,15 @@ async function joinJobQueue(name, jobOptions) {
   return queue
 }
 
-function enqueue(name, jobName, data, options) {
+function enqueue(name, jobTitle, data, options) {
   if (!(name in queues)) {
     throw new Error(`Job queue "${name}" does not exist`)
   }
 
-  if (typeof jobName !== 'string') {
-    data = jobName
+  if (typeof jobTitle !== 'string') {
+    data = jobTitle
     options = data
-    name = undefined
+    jobTitle = undefined
   }
 
   const {
@@ -116,10 +116,11 @@ function enqueue(name, jobName, data, options) {
   options = {
     ...jobOptions,
     jobId: jobIdKey ? _.get(data, jobIdKey) : undefined,
+    jobTitle,
     ...options
   }
 
-  return queue.add(jobName, data, options)
+  return queue.add(data, options)
 }
 
 async function disconnectQueues() {
