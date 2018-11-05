@@ -101,7 +101,7 @@ Join a job queue. Behaves like `createJobQueue` except that it does not register
 
 Add a job to the `name` jobQueue.
 
-Just like in bull’s `queue.add`, `jobName` is optional.
+Just like in bull’s `Queue#add`, `jobName` is optional.
 
 ### `disconnectQueues()`
 
