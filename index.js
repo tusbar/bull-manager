@@ -115,7 +115,7 @@ function enqueue(name, jobTitle, data, options) {
 
   options = {
     ...jobOptions,
-    jobId: jobIdKey ? _.get(data, jobIdKey) : undefined,
+    jobId: jobIdKey ? _.get(data, jobIdKey) : jobOptions.jobId,
     ...options
   }
 
