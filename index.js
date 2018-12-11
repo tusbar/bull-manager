@@ -103,8 +103,8 @@ function enqueue(name, jobTitle, data, options) {
   }
 
   if (typeof jobTitle !== 'string') {
-    data = jobTitle
     options = data
+    data = jobTitle
     jobTitle = undefined
   }
 
